@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import mainLogo from "../assets/images/logo.png";
+import mainLogo from "../assets/images/logo.webp";
 import "./stylesheet.scss";
 
 const Header = () => {
@@ -9,7 +9,9 @@ const Header = () => {
         <div className="row d-flex align-items-center">
           <div className="col">
             <div className="nav-logo">
-              <img src={mainLogo} alt="Logo" />
+              <Link to="/">
+                <img src={mainLogo} alt="Logo" />
+              </Link>
             </div>
           </div>
           <div className="col">
