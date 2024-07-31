@@ -96,23 +96,27 @@
     padding: 50px 0;
 
     .title {
-      font-size: 40px;
-      line-height: 52px;
-      font-weight: 500;
-      color: #000;
-      text-transform: uppercase;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-bottom: 50px;
+      h3 {
+        font-size: 40px;
+        line-height: 52px;
+        font-weight: 500;
+        color: #000;
+        text-transform: uppercase;
+        padding-bottom: 50px;
+        margin: unset;
+        text-align: center;
 
-      .title-icon {
-        color: #01a1dd;
-      }
+        .title-icon {
+          color: #01a1dd;
+        }
 
-      span {
-        color: #01a1dd;
-        font-weight: 700;
+        span {
+          color: #01a1dd;
+          font-weight: 700;
+        }
       }
     }
 
@@ -122,7 +126,6 @@
       align-items: center;
       justify-content: center;
       flex: 1;
-      gap: 30px;
 
       .img-area {
         width: 540px;
@@ -136,6 +139,7 @@
       }
 
       .content-area {
+        flex: 1;
         p {
           margin: 0;
           max-width: 575px;
@@ -151,32 +155,27 @@
     padding: 50px 0;
 
     .title {
-      font-size: 34px;
-      line-height: 44px;
-      font-weight: 500;
-      color: #000;
-      text-transform: uppercase;
       display: flex;
       align-items: center;
+      h3 {
+        font-size: 40px;
+        line-height: 52px;
+        font-weight: 500;
+        color: #000;
+        text-transform: uppercase;
+        margin: unset;
+        text-align: start;
+        margin-bottom: 30px;
 
-      .title-icon {
-        color: #01a1dd;
+        .title-icon {
+          color: #01a1dd;
+        }
+
+        span {
+          color: #01a1dd;
+          font-weight: 700;
+        }
       }
-
-      span {
-        color: #01a1dd;
-        font-weight: 700;
-      }
-    }
-
-    h2 {
-      font-size: 34px;
-      line-height: 44px;
-      color: #000;
-      color: #01a1dd;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 30px;
     }
 
     .stramline {
@@ -201,8 +200,8 @@
     }
 
     .img-area {
-      height: 300px;
-      width: 550px;
+      height: 220px;
+      width: 400px;
       object-fit: cover;
 
       img {
@@ -225,7 +224,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-bottom: 50px;
 
       .title-icon {
         color: #01a1dd;
@@ -236,21 +234,85 @@
         font-weight: 700;
       }
     }
+
+    .setps {
+      padding-top: 30px;
+      .step-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .image-area {
+          height: 100px;
+          width: 100px;
+          display: block;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        color: rgb(0, 0, 0);
+        line-height: 27px;
+        padding: 20px 0;
+      }
+
+      p {
+        margin: 0;
+        color: #000;
+        font-size: 20px;
+        line-height: 26px;
+        font-weight: 400;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+    }
+
+    .sub-title {
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+      line-height: 27px;
+      padding: 10px 0;
+      max-width: 80%;
+
+      span {
+        font-weight: 700;
+      }
+    }
   }
 
   .compare {
     padding: 50px 0;
 
     .title {
-      font-size: 40px;
-      line-height: 52px;
-      font-weight: 500;
-      color: #000;
-      text-transform: uppercase;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding-bottom: 30px;
+      h3 {
+        font-size: 40px;
+        line-height: 52px;
+        font-weight: 500;
+        color: #000;
+        text-transform: uppercase;
+        padding-bottom: 50px;
+        margin: unset;
+        text-align: center;
+
+        .title-icon {
+          color: #01a1dd;
+        }
+
+        span {
+          color: #01a1dd;
+          font-weight: 700;
+        }
+      }
 
       .title-icon {
         color: #01a1dd;
@@ -263,12 +325,12 @@
     }
 
     .image-area {
-      width: 900px;
-      height: 570px;
+      width: 830px;
+      height: auto;
       text-align: center;
+      object-fit: cover;
 
       img {
-        object-fit: cover;
         width: 100%;
         height: 100%;
       }
@@ -279,7 +341,7 @@
     background-color: #f1f1f1;
     padding: 50px 0;
     display: flex;
-    align-items: center;
+    align-items: center !important;
 
     .image-area {
       width: 285px;
@@ -365,7 +427,6 @@
           padding: 30px 0;
         }
       }
-      
     }
     button {
       border: 0;
@@ -374,6 +435,336 @@
       font-weight: 700;
       color: #fff;
       padding: 10px 50px;
+      margin-top: 30px;
+      cursor: pointer;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .home-main {
+    .hero-section {
+      background: #0a2852;
+      padding: 50px 20px !important;
+
+      .video-area {
+        padding: 5% 0 15% 0;
+        .title {
+          font-size: 28px;
+        }
+        .footer {
+          font-size: 18px;
+
+          span {
+            color: rgb(0, 149, 201);
+          }
+        }
+      }
+    }
+  }
+
+  .priority-main {
+    padding: 50px 20px !important;
+
+    .title {
+      h3 {
+        font-size: 35px !important;
+        line-height: 42px !important;
+      }
+    }
+
+    .details {
+      gap: 50px;
+      display: flex;
+      justify-content: center !important;
+
+      .img-area {
+        width: 540px;
+        height: 480px;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .content-area {
+        text-align: start;
+        p {
+          font-size: 18px !important;
+          line-height: 20px !important;
+        }
+      }
+    }
+  }
+
+  .why-us {
+    padding: 50px 20px !important;
+
+    .title {
+      display: flex;
+      align-items: center;
+      h3 {
+        font-size: 35px !important;
+        line-height: 42px !important;
+      }
+    }
+
+    .stramline {
+      font-size: 18px !important;
+      line-height: 24px !important;
+    }
+    .support {
+      font-size: 18px !important;
+      line-height: 24px !important;
+    }
+  }
+
+  .compare {
+    padding: 50px 20px !important;
+
+    .title {
+      h3 {
+        font-size: 35px !important;
+        line-height: 42px !important;
+      }
+    }
+  }
+
+  .owner-info {
+    padding: 50px 20px !important;
+    .col-md-5.col-sm-12.d-flex.justify-content-center {
+      margin-top: 50px;
+    }
+
+    .title {
+      font-size: 25px !important;
+      line-height: 30px !important;
+      margin-top: 50px !important;
+      text-align: start !important;
+    }
+
+    .description {
+      margin-top: 40px !important;
+
+      p {
+        font-size: 18px !important;
+        line-height: 24px !important;
+      }
+    }
+  }
+
+  .testimonial {
+    padding: 50px 20px !important;
+
+    .title {
+      font-size: 35px !important;
+      line-height: 42px !important;
+    }
+
+    .reviews {
+      .review-item {
+        .stars {
+          .star {
+            font-size: 25px !important;
+          }
+        }
+
+        .comment {
+          font-size: 18px !important;
+          line-height: 24px !important;
+        }
+
+        .reviewer {
+          font-size: 18px !important;
+          line-height: 24px !important;
+          padding: 20px 0 !important;
+        }
+      }
+    }
+
+    button {
+      font-size: 18px !important;
+      padding: 8px 40px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .home-main {
+    .hero-section {
+      background: #0a2852;
+      padding: 70px 0;
+
+      .video-area {
+        padding: 5% 0 15% 0;
+        .title {
+          font-size: 25px !important; 
+          text-align: center;
+        }
+        .footer {
+          font-size: 18px;
+          text-align: center;
+
+          span {
+            color: rgb(0, 149, 201);
+          }
+        }
+      }
+    }
+  }
+
+  .priority-main {
+    background-color: #f1f1f1;
+    padding: 50px 0;
+
+    .title {
+      h3 {
+        font-size: 30px;
+        line-height: 38px;
+      }
+    }
+
+    .details {
+      gap: 30px;
+      display: flex;
+      justify-content: center !important;
+
+      .content-area {
+        text-align: start;
+        p {
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+
+  .why-us {
+    .title {
+      h3 {
+        font-size: 32px !important;
+        line-height: 38px !important;
+      }
+    }
+
+    .img-area {
+      height: 190px !important;
+      width: 350px !important;
+      object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .how-it-works {
+    padding: 50px 20px !important;
+
+    .title {
+      h3 {
+        font-size: 32px !important;
+        line-height: 38px !important;
+      }
+    }
+
+    .setps {
+      padding-top: 30px;
+      .step-item {
+        .image-area {
+          height: 90px !important;
+          width: 90px !important;
+        }
+      }
+
+      p {
+        font-size: 18px !important;
+        line-height: 24px !important;
+      }
+    }
+
+    .sub-title {
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+      line-height: 27px;
+      padding: 10px 0;
+      max-width: 80%;
+
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+
+  .compare {
+    padding: 50px 0;
+
+    .title {
+      h3 {
+        font-size: 32px !important;
+        line-height: 38px !important;
+      }
+    }
+  }
+
+  .owner-info {
+    .title {
+      font-size: 25px !important;
+      line-height: 30px !important;
+      margin-top: 50px !important;
+      text-align: start !important;
+    }
+
+    .description {
+      margin-top: 40px !important;
+
+      p {
+        font-size: 18px !important;
+        line-height: 24px !important;
+      }
+    }
+  }
+
+  .testimonial {
+    padding: 50px 0;
+
+    .title {
+      font-size: 35px !important;
+      line-height: 42px !important;
+    }
+
+    .reviews {
+      margin-top: 30px;
+      .review-item {
+        .stars {
+          margin-left: 10px !important;
+          .star {
+            font-size: 25px !important;
+          }
+        }
+
+        .comment {
+          font-size: 18px !important;
+          line-height: 24px !important;
+        }
+
+        .reviewer {
+          font-size: 18px !important;
+          line-height: 24px !important;
+          padding: 15px 0 !important;
+        }
+      }
+    }
+
+    button {
+      font-size: 18px !important;
+      font-weight: 700;
+      color: #fff;
+      padding: 8px 40px;
       margin-top: 30px;
       cursor: pointer;
     }

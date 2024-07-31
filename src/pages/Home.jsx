@@ -1,5 +1,5 @@
-import Layout from "../components/Layout";
 import "./stylesheet.scss";
+import Layout from "../components/Layout";
 import { FaClock } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import forSale from "../assets/images/forsale.webp";
@@ -7,18 +7,48 @@ import compactLogo from "../assets/images/logo_compact.webp";
 import compareImage from "../assets/images/compare.webp";
 import ownerImage from "../assets/images/owner-section.jpeg";
 import { IoSettingsSharp } from "react-icons/io5";
-import { FaLocationDot } from "react-icons/fa6";
 import { FaCheckCircle } from "react-icons/fa";
 import { RiStarSFill } from "react-icons/ri";
 import { FaUserFriends } from "react-icons/fa";
 import { useRef } from "react";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+import home from "../assets/images/home.webp";
+import money from "../assets/images/money.webp";
+import calendar from "../assets/images/calendar.webp";
+import { useForm } from "react-hook-form";
+
+const schema = yup.object().shape({
+  address: yup.string().required("Property Address is required"),
+  name: yup.string().required("Name is required"),
+  phone: yup
+    .string()
+    .required("Phone number is required")
+    .matches(/^[0-9]/, "Phone number must be a number"),
+  email: yup
+    .string()
+    .email("Invalid email format")
+    .required("Email is required"),
+});
 
 const Home = () => {
-
   const heroSectionRef = useRef(null);
 
   const scrollToHeroSection = () => {
-    heroSectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    heroSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    console.log("data", data);
   };
 
   return (
@@ -27,7 +57,7 @@ const Home = () => {
         <div className="hero-section" ref={heroSectionRef}>
           <div className="container">
             <div className="row d-flex align-items-center">
-              <div className="col-md-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="video-area">
                   <div className="title">
                     Sell Your Home for Cash FAST, No Matter the Condition
@@ -40,7 +70,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-md-6">
+              <div className="col-md-6 col-sm-12">
                 <div className="form-area shadow-sm">
                   <div className="title">
                     Need to <span>Sell YOUR House?</span>
@@ -50,7 +80,7 @@ const Home = () => {
                     <span>No</span> Repairs
                   </div>
                   <div className="form-home">
-                    <form onSubmit={(e) => e.preventDefault()} action="">
+                    <form onSubmit={handleSubmit(onSubmit)} action="">
                       <div className="my-3">
                         <label htmlFor="address" className="form-label">
                           Property Address{" "}
@@ -60,13 +90,29 @@ const Home = () => {
                           type="text"
                           id="address"
                           className="form-control"
+                          {...register("address")}
                         />
+                        {errors.address && (
+                          <div className="text-danger">
+                            {errors.address.message}
+                          </div>
+                        )}
                       </div>
                       <div className="my-3">
                         <label htmlFor="name" className="form-label">
                           Name <span className="text-danger">*</span>{" "}
                         </label>
-                        <input type="text" id="name" className="form-control" />
+                        <input
+                          type="text"
+                          id="name"
+                          className="form-control"
+                          {...register("name")}
+                        />
+                        {errors.name && (
+                          <div className="text-danger">
+                            {errors.name.message}
+                          </div>
+                        )}
                       </div>
                       <div className="my-3">
                         <label htmlFor="phone" className="form-label">
@@ -76,7 +122,13 @@ const Home = () => {
                           type="text"
                           id="phone"
                           className="form-control"
+                          {...register("phone")}
                         />
+                        {errors.phone && (
+                          <div className="text-danger">
+                            {errors.phone.message}
+                          </div>
+                        )}
                       </div>
                       <div className="my-3">
                         <label htmlFor="email" className="form-label">
@@ -86,7 +138,13 @@ const Home = () => {
                           type="text"
                           id="email"
                           className="form-control"
+                          {...register("email")}
                         />
+                        {errors.email && (
+                          <div className="text-danger">
+                            {errors.email.message}
+                          </div>
+                        )}
                       </div>
                       <div className="my-4">
                         <button>Get My Free Offer</button>
@@ -110,15 +168,17 @@ const Home = () => {
         <div className="priority-main">
           <div className="container">
             <div className="title">
-              <FaClock className="title-icon me-1" />
-              When Selling Fast is Your{" "}
-              <span className="ms-2"> Top Priority</span>
+              <h3>
+                <FaClock className="title-icon me-1" />
+                When Selling Fast is Your{" "}
+                <span className=""> Top Priority</span>
+              </h3>
             </div>
             <div className="row details">
-              <div className="col-md-6 img-area">
+              <div className="col-md-6 col-sm-12 img-area">
                 <img src={forSale} alt="" />
               </div>
-              <div className="content-area col-md-6">
+              <div className="content-area col-md-6 col-sm-12">
                 <p className="mb-3">
                   Caught in a tough spot? We get it. Sometimes life throws you a
                   curveball—whether it’s pre-foreclosure, inheriting a property
@@ -151,10 +211,11 @@ const Home = () => {
             <div className="row d-flex align-items-center">
               <div className="col-md-6">
                 <div className="title">
-                  <FaUser className="title-icon me-1" />
-                  Why Homerun Offer <span className="ms-1"> Makes</span>
+                  <h3>
+                    <FaUser className="title-icon me-1" />
+                    Why Homerun Offer <span> Makes Sense for You</span>
+                  </h3>
                 </div>
-                <h2> Sense for You</h2>
                 <div className="stramline">
                   <span>Streamlined Selling Process:</span> Imagine bypassing
                   months of uncertainty and the headache of potential buyers
@@ -175,7 +236,7 @@ const Home = () => {
                   estate.
                 </div>
               </div>
-              <div className="col-md-6 d-flex justify-content-end">
+              <div className="col-md-6 d-flex justify-content-center">
                 <div className="img-area">
                   <img src={compactLogo} alt="" />
                 </div>
@@ -188,33 +249,48 @@ const Home = () => {
           <div className="container">
             <div className="row">
               <div className="title">
-                <IoSettingsSharp className="title-icon me-1" />
-                How <span className="ms-2"> It Works</span>
+                <h3>
+                  <IoSettingsSharp className="title-icon me-1" />
+                  How <span> It Works</span>
+                </h3>
               </div>
-              <div className="setps">
-                <div className="step-item">
-                  <FaLocationDot className="step-item-icon" />
-                  <h3>Submit</h3>
-                  <p>your address</p>
+              <div style={{margin : "0"}} className="row">
+                <div className="setps col-md-4">
+                  <div className="step-item">
+                    <div className="image-area">
+                      <img src={home} alt="" />
+                    </div>
+                    <h3>STEP 1</h3>
+                    <p>
+                      Tell us about your house. We’ll get started today
+                      analyzing your property.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="deal-text">
-                <span>A Fair Deal, Fast:</span> You’re not just getting a fast
-                sale; you’re getting a fair one. We base our cash offers on a
-                thorough understanding of local market conditions, ensuring you
-                get a competitive price for your property. And with our
-                no-obligation policy, you have nothing to lose by seeing what we
-                can offer.
-              </div>
-
-              <div className="move-forward-text">
-                <span>Ready to Move Forward?</span> If the idea of selling your
-                home quickly, with no hassle and no fees, sounds like what you
-                need, it’s time to get in touch. Don’t let financial
-                difficulties, the burden of unwanted property, or the fear of
-                extensive repairs keep you from moving forward in life.
+                <div className="setps col-md-4">
+                  <div className="step-item">
+                    <div className="image-area">
+                      <img src={money} alt="" />
+                    </div>
+                    <h3>STEP 2</h3>
+                    <p>
+                      We’ll make you a fair offer based on the market value and
+                      condition with no obligation.
+                    </p>
+                  </div>
+                </div>
+                <div className="setps col-md-4">
+                  <div className="step-item">
+                    <div className="image-area">
+                      <img src={calendar} alt="" />
+                    </div>
+                    <h3>STEP 1</h3>
+                    <p>
+                      Tell us about your house. We’ll get started today
+                      analyzing your property.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -224,8 +300,10 @@ const Home = () => {
           <div className="container">
             <div className="row d-flex flex-col justify-content-center">
               <div className="title">
-                <FaCheckCircle className="title-icon me-1" />
-                HOW WE <span className="ms-2">COMPARE</span>
+                <h3>
+                  <FaCheckCircle className="title-icon me-1" />
+                  HOW WE <span>COMPARE</span>
+                </h3>
               </div>
               <div className="image-area">
                 <img src={compareImage} alt="" />
@@ -237,12 +315,12 @@ const Home = () => {
         <div className="owner-info">
           <div className="container">
             <div className="row">
-              <div className="col-md-5 d-flex justify-content-center">
+              <div className="col-md-5 col-sm-12 d-flex align-items-center justify-content-center">
                 <div className="image-area">
                   <img src={ownerImage} alt="" />
                 </div>
               </div>
-              <div className="col-md-7">
+              <div className="col-md-7 col-sm-12">
                 <div className="title text-center">
                   RYAN <span className="ms-2">PINEDA</span>
                 </div>
@@ -312,7 +390,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="row mt-5">
+            <div className="row">
               <div className="reviews col-md-6">
                 <div className="review-item">
                   <div className="stars">
@@ -351,7 +429,9 @@ const Home = () => {
               </div>
             </div>
             <div className="d-flex justify-content-center">
-              <button onClick={scrollToHeroSection}>GET YOUR FREE CASH OFFER NOW</button>
+              <button onClick={scrollToHeroSection}>
+                GET YOUR FREE CASH OFFER NOW
+              </button>
             </div>
           </div>
         </div>

@@ -12,17 +12,23 @@
     }
   }
 
-  .nav-menu {
-    ul {
-      margin: 0;
-      padding: 0;
-      li {
-        a {
-          color: rgb(0, 0, 0);
-          font-size: 17px;
-          font-weight: 400;
-          line-height: 21px;
-          text-decoration: none;
+  .custom-position {
+    display: flex;
+    justify-content: space-between;
+
+    .nav-menu {
+      padding-left: 10%;
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          a {
+            color: rgb(0, 0, 0);
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 21px;
+            text-decoration: none;
+          }
         }
       }
     }
@@ -33,6 +39,10 @@
     color: rgb(0, 0, 0);
     font-size: 18px;
     line-height: 23px;
+  }
+
+  .responsive-menu {
+    display: none;
   }
 }
 
@@ -57,6 +67,213 @@
       font-size: 16px;
       line-height: 21px;
       font-weight: 500;
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .nav-logo {
+    height: 55px !important;
+    width: 200px !important;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .custom-position {
+    justify-content: end !important;
+    .nav-menu {
+      padding-left: 5% !important;
+    }
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .footer-content {
+    .image-area {
+      height: 65px !important;
+      width: 188px !important;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: 14px !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 50px !important;
+    width: 180px !important;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .custom-position {
+    justify-content: end !important;
+    .nav-menu {
+      display: none !important;
+    }
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .responsive-menu {
+    display: flex !important;
+    align-items: center !important;
+
+    .phone-menu-btn {
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #01a1dd;
+      border: none;
+      padding: 2px 7px;
+      padding-bottom: 3px;
+      border-radius: 5px;
+    }
+
+    .phone-menu {
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 50%;
+      height: calc(100vh - 85px);
+      transition: 0.5s ease-in-out;
+      background-color: rgb(60, 120, 240);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        li {
+          a {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-content {
+    .image-area {
+      height: 55px !important;
+      width: 150px !important;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    h3 {
+      font-size: 13px !important;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+
+  .navlogo-wrapper {
+    width: 80% !important;
+  }
+
+  .nav-logo {
+    height: 50px !important;
+    width: 180px !important;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .custom-position {
+    justify-content: end !important;
+    width: 20% !important;
+    .nav-menu {
+      display: none !important;
+    }
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .responsive-menu {
+    display: flex !important;
+    align-items: center !important;
+
+    .phone-menu-btn {
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #01a1dd;
+      border: none;
+      padding: 2px 7px;
+      padding-bottom: 3px;
+      border-radius: 5px;
+    }
+
+    .phone-menu {
+      position: absolute;
+      top: 90px;
+      left: 0;
+      width: 50%;
+      height: calc(100vh - 85px);
+      transition: 0.5s ease-in-out;
+      background-color: rgb(60, 120, 240);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+
+        li {
+          a {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 21px;
+            text-decoration: none;
+          }
+        }
+      }
     }
   }
 }
