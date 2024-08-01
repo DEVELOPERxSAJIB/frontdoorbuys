@@ -336,7 +336,7 @@ const Home = () => {
                     <div className="image-area">
                       <img src={calendar} alt="" />
                     </div>
-                    <h3>STEP 1</h3>
+                    <h3>STEP 3</h3>
                     <p>
                       Tell us about your house. We’ll get started today
                       analyzing your property.
