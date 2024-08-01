@@ -4,7 +4,7 @@ import { FaClock } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import forSale from "../assets/images/forsale.webp";
 import compactLogo from "../assets/images/newLogo.webp";
-import compareImage from "../assets/images/compare.webp";
+import compareImage from "../assets/images/frontdoorbannner.webp";
 import ownerImage from "../assets/images/owner-section.jpeg";
 import { IoSettingsSharp } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";

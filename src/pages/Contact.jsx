@@ -2,8 +2,73 @@ import { Link } from "react-router-dom";
 import logo from "../assets/images/newLogo.webp";
 import Layout from "../components/Layout";
 import "./stylesheet.scss";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import emailjs from "@emailjs/browser";
+import * as yup from "yup";
+import { useRef, useState } from "react";
+import { RxCross1 } from "react-icons/rx";
+
+const schema = yup.object().shape({
+  firstName: yup.string().required("First name is required"),
+  lastName: yup.string().required("Last name is required"),
+  message: yup.string().required("Message is required"),
+  phone: yup
+    .string()
+    .required("Phone number is required")
+    .matches(/^[0-9]+$/, "Phone number must be a number"),
+  email: yup
+    .string()
+    .email("Invalid email format")
+    .required("Email is required"),
+});
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const form = useRef();
+  const [isChecked, setIsChecked] = useState(false);
+  const [successMessage, setSucessMessage] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
+
+  const sendEmail = (data) => {
+    const dataWithCheckbox = {
+      ...data,
+      consentGiven: isChecked ? "I want to receive emails" : "Don't send marketing email" ,
+    };
+
+    setLoading(true);
+    
+    emailjs
+      .sendForm("service_9bmkzoo", "template_zm4w45p", form.current, {
+        publicKey: "GAQ_Vq4tSYF9xubIj",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setSucessMessage(true);
+          reset();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      )
+      .finally(() => {
+        setLoading(false);
+      });
+  };
+
   return (
     <Layout>
       <div className="contact-main">
@@ -28,7 +93,31 @@ const Contact = () => {
                 <div className="card">
                   <div className="card-body px-5 py-3">
                     <div className="row d-flex justify-content-center">
-                      <form action="">
+                      <form
+                        ref={form}
+                        onSubmit={handleSubmit(sendEmail)}
+                        action=""
+                      >
+                        <div className="my-3">
+                          {successMessage && (
+                            <div className="d-flex justify-content-between alert alert-success text-center">
+                              {successMessage ? (
+                                <span
+                                  className="text-success"
+                                  style={{ fontWeight: "700px" }}
+                                >
+                                  You will get an Email from us soon. Thanks
+                                </span>
+                              ) : null}
+                              <span
+                                style={{ cursor: "pointer" }}
+                                onClick={() => setSucessMessage(false)}
+                              >
+                                <RxCross1 color="#000" />
+                              </span>
+                            </div>
+                          )}
+                        </div>
                         <div className="row">
                           <div className="col-md-6 mb-3">
                             <label htmlFor="firstName" className="form-label">
@@ -40,7 +129,13 @@ const Contact = () => {
                               id="firstName"
                               name="firstName"
                               placeholder="First Name"
+                              {...register("firstName")}
                             />
+                            {errors.firstName && (
+                              <div className="text-danger">
+                                {errors.firstName.message}
+                              </div>
+                            )}
                           </div>
                           <div className="col-md-6 mb-3">
                             <label htmlFor="lastName" className="form-label">
@@ -52,7 +147,13 @@ const Contact = () => {
                               id="lastName"
                               name="lastName"
                               placeholder="Last Name"
+                              {...register("lastName")}
                             />
+                            {errors.lastName && (
+                              <div className="text-danger">
+                                {errors.lastName.message}
+                              </div>
+                            )}
                           </div>
                           <div className="col-md-6 mb-3">
                             <label htmlFor="email" className="form-label">
@@ -64,7 +165,13 @@ const Contact = () => {
                               id="email"
                               name="email"
                               placeholder="Email"
+                              {...register("email")}
                             />
+                            {errors.email && (
+                              <div className="text-danger">
+                                {errors.email.message}
+                              </div>
+                            )}
                           </div>
                           <div className="col-md-6 mb-3">
                             <label htmlFor="password" className="form-label">
@@ -76,7 +183,13 @@ const Contact = () => {
                               id="password"
                               name="phone"
                               placeholder="Phone"
+                              {...register("phone")}
                             />
+                            {errors.phone && (
+                              <div className="text-danger">
+                                {errors.phone.message}
+                              </div>
+                            )}
                           </div>
                           <div className="col-md-12 mb-3">
                             <label htmlFor="message" className="form-label">
@@ -88,15 +201,21 @@ const Contact = () => {
                               className="form-control"
                               id="message"
                               name="message"
+                              {...register("message")}
                             />
+                            {errors.message && (
+                              <div className="text-danger">
+                                {errors.message.message}
+                              </div>
+                            )}
                           </div>
                           <div className="col-md-12 mb-3 d-flex me-5">
                             <div className="check-box">
                               <input
                                 type="checkbox"
-                                id="message"
-                                name="message"
                                 className="me-2"
+                                checked={isChecked}
+                                onChange={handleCheckboxChange}
                               />
                             </div>
                             <div className="">
@@ -135,7 +254,9 @@ const Contact = () => {
                         </div>
 
                         <div className="contact-form-btn">
-                          <button type="submit">Send Message</button>
+                          <button type="submit">
+                            {loading ? "Sending . . ." : "Send Message"}
+                          </button>
                         </div>
                       </form>
                     </div>
