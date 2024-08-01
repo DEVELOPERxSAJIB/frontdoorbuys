@@ -484,8 +484,8 @@
     padding: 70px 0;
 
     .image-area {
-      width: 550px;
-      height: 350px;
+      height: 200px;
+      width: 400px;
 
       img {
         border-radius: 5px;
@@ -650,8 +650,9 @@
       font-weight: 500;
       font-family: "Inter", sans-serif;
     }
-    
-    input, textarea {
+
+    input,
+    textarea {
       font-weight: 500;
       font-size: 12px;
       color: rgb(44, 51, 69);
@@ -661,8 +662,34 @@
       padding: 8px 15px;
 
       &:focus {
-        outline : none;
+        outline: none;
         border: 1px solid rgba(44, 51, 69, 0.351);
+      }
+    }
+
+    span.check-box-text {
+      font-size: 14px;
+      line-height: 20px;
+      font-weight: 400;
+      color: #000;
+      font-family: "Inter", sans-serif;
+    }
+
+    .contact-form-btn {
+      button {
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        background-color: #01a1dd;
+        border: none;
+        padding: 15px 10px !important;
+        border-radius: 7px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 15px;
+        line-height: 27px;
+        font-weight: 400;
+        font-family: "Inter", sans-serif;
       }
     }
   }
@@ -1018,8 +1045,8 @@
       padding: 70px 20px !important;
 
       .image-area {
-        width: 450px !important;
-        height: 250px !important;
+        height: 150px !important;
+        width: 320px !important;
       }
 
       h2 {
@@ -1103,8 +1130,8 @@
       padding: 70px 20px !important;
 
       .image-area {
-        width: 450px !important;
-        height: 250px !important;
+        width: 300px !important;
+        height: 120px !important;
       }
 
       h2 {

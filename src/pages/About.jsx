@@ -1,5 +1,4 @@
 import Layout from "../components/Layout";
-import difference from "../assets/images/difference.webp";
 import { ImQuotesLeft } from "react-icons/im";
 import { RiStarSFill } from "react-icons/ri";
 import reviewerOne from "../assets/images/reviewer-1.webp";
@@ -19,7 +18,7 @@ const About = () => {
                   <img src={logo} alt="" />
                 </div>
               </div>
-              <h2>About Homerun Offer</h2>
+              <h2>About Front Door Buys</h2>
               <p>
                 We have helped hundreds of homeowners buy and sell properties.
                 Our goal is to provide a quick and no hassle solution to selling
@@ -41,11 +40,11 @@ const About = () => {
             <div className="row d-flex align-items-center">
               <div className="col-md-6 d-flex justify-content-center">
                 <div className="image-area">
-                  <img src={difference} alt="image" />
+                  <img src={logo} alt="image" />
                 </div>
               </div>
               <div className="col-md-6">
-                <h2>The Homerun Offer Difference</h2>
+                <h2>The Front Door Buys Difference</h2>
                 <ul>
                   <li>We&#39;ll buy your home as-is.</li>
                   <li>You won&#39;t have to list it or show it.</li>
@@ -109,10 +108,10 @@ const About = () => {
                       <RiStarSFill className="star" />
                     </div>
                     <div className="comment">
-                      Homerun Offer is the best in Las Vegas. They do what they
+                      Front Door Buys is the best in Las Vegas. They do what they
                       say they will do. Ryan is experienced and professional. He
                       is all truth. If you are looking to sell your home quickly
-                      with full transparency give Homerun Offer a chance.
+                      with full transparency give Front Door Buys a chance.
                     </div>
                     <div className="d-flex justify-content-center mt-4">
                       <div className="image-area">
