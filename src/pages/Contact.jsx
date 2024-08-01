@@ -42,14 +42,9 @@ const Contact = () => {
     setIsChecked(event.target.checked);
   };
 
-  const sendEmail = (data) => {
-    const dataWithCheckbox = {
-      ...data,
-      consentGiven: isChecked ? "I want to receive emails" : "Don't send marketing email" ,
-    };
-
+  const sendEmail = () => {
     setLoading(true);
-    
+
     emailjs
       .sendForm("service_9bmkzoo", "template_zm4w45p", form.current, {
         publicKey: "GAQ_Vq4tSYF9xubIj",
@@ -212,10 +207,17 @@ const Contact = () => {
                           <div className="col-md-12 mb-3 d-flex me-5">
                             <div className="check-box">
                               <input
+                                onClick={() => setIsChecked((prev) => !prev)}
                                 type="checkbox"
+                                name="consentGiven"
+                                value={
+                                  isChecked
+                                    ? "I want to receive emails"
+                                    : "Don't send marketing email"
+                                }
                                 className="me-2"
-                                checked={isChecked}
                                 onChange={handleCheckboxChange}
+                                {...register("consentGiven")}
                               />
                             </div>
                             <div className="">
