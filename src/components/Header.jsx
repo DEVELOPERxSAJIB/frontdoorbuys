@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import mainLogo from "../assets/images/logo.webp";
-import { RiMenuFill } from "react-icons/ri";
-import { RxCross2 } from "react-icons/rx";
+import mainLogo from "../assets/images/newLogo.webp";
+import { TfiMenu } from "react-icons/tfi";
+import { ImCross } from "react-icons/im";
 import { MdCall } from "react-icons/md";
 import "./stylesheet.scss";
 
@@ -45,12 +45,20 @@ const Header = () => {
                 className="phone-menu-btn overlay"
                 onClick={() => setOpen((prev) => !prev)}
               >
-                {open ? <RxCross2 /> : <RiMenuFill />}
+                {open ? <ImCross  /> : <TfiMenu />}
               </button>
               {open && (
                 <>
                   <div className="phone-menu">
-                    <ul className="list-unstyled d-flex gap-5">
+                    <div className="cross-btn">
+                    <ImCross 
+                        size={15}
+                        color="#000"
+                        onClick={() => setOpen(false)}
+                        style={{ cursor: "pointer" }}
+                      />
+                    </div>
+                    <ul className="list-unstyled d-flex gap-2">
                       <li>
                         <Link to="/">Home</Link>
                       </li>
@@ -64,8 +72,8 @@ const Header = () => {
                         style={{ position: "absolute", bottom: "30px" }}
                         className="d-flex align-items-center gap-1"
                       >
-                        <MdCall size={25} color="#fff" />
-                        <Link style={{ fontWeight: "600" }} to="tel:8449554354">
+                        <MdCall size={20} color="#111" />
+                        <Link style={{ fontWeight: "500" }} to="tel:8449554354">
                           8449554354
                         </Link>
                       </li>

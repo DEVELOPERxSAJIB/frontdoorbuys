@@ -3,17 +3,18 @@ import Layout from "../components/Layout";
 import { FaClock } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import forSale from "../assets/images/forsale.webp";
-import compactLogo from "../assets/images/logo_compact.webp";
+import compactLogo from "../assets/images/newLogo.webp";
 import compareImage from "../assets/images/compare.webp";
 import ownerImage from "../assets/images/owner-section.jpeg";
 import { IoSettingsSharp } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
 import { RiStarSFill } from "react-icons/ri";
 import { FaUserFriends } from "react-icons/fa";
-import { useRef } from "react";
+import { RxCross1 } from "react-icons/rx";
+import { useRef, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
+import emailjs from "@emailjs/browser";
 import * as yup from "yup";
-
 import home from "../assets/images/home.webp";
 import money from "../assets/images/money.webp";
 import calendar from "../assets/images/calendar.webp";
@@ -25,7 +26,7 @@ const schema = yup.object().shape({
   phone: yup
     .string()
     .required("Phone number is required")
-    .matches(/^[0-9]/, "Phone number must be a number"),
+    .matches(/^[0-9]+$/, "Phone number must be a number"),
   email: yup
     .string()
     .email("Invalid email format")
@@ -43,12 +44,34 @@ const Home = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("data", data);
+  const form = useRef();
+  const [successMessage, setSucessMessage] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = () => {
+    setLoading(true);
+    emailjs
+      .sendForm("service_9bmkzoo", "template_zm4w45p", form.current, {
+        publicKey: "GAQ_Vq4tSYF9xubIj",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          setSucessMessage(true);
+          reset();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      )
+      .finally(() => {
+        setLoading(false); // Hide loading message
+      });
   };
 
   return (
@@ -80,7 +103,31 @@ const Home = () => {
                     <span>No</span> Repairs
                   </div>
                   <div className="form-home">
-                    <form onSubmit={handleSubmit(onSubmit)} action="">
+                    <form
+                      ref={form}
+                      onSubmit={handleSubmit(sendEmail)}
+                      action=""
+                    >
+                      <div className="my-3">
+                        {successMessage && (
+                          <div className="d-flex justify-content-between alert alert-success text-center">
+                            {successMessage ? (
+                              <span
+                                className="text-success"
+                                style={{ fontWeight: "700px" }}
+                              >
+                                You will get an Email from us soon. Thanks
+                              </span>
+                            ) : null}
+                            <span
+                              style={{ cursor: "pointer" }}
+                              onClick={() => setSucessMessage(false)}
+                            >
+                              <RxCross1 color="#000" />
+                            </span>
+                          </div>
+                        )}
+                      </div>
                       <div className="my-3">
                         <label htmlFor="address" className="form-label">
                           Property Address{" "}
@@ -147,7 +194,11 @@ const Home = () => {
                         )}
                       </div>
                       <div className="my-4">
-                        <button>Get My Free Offer</button>
+                        <button disabled={loading} type="submit">
+                          {loading
+                            ? "Sending Email . . ."
+                            : "Get My Free Offer"}
+                        </button>
                       </div>
 
                       <div className="text-start mt-4 px-4">
@@ -189,7 +240,7 @@ const Home = () => {
                 </p>
 
                 <p className="mb-3">
-                  That’s where Homerun Offer steps in. We specialize in quick,
+                  That’s where Front Door Buys steps in. We specialize in quick,
                   cash offers for homes just like yours. Forget the stress of
                   fixing up your home, dealing with showings or paying
                   commission; we buy your home as-is, so you can move on faster
@@ -209,13 +260,13 @@ const Home = () => {
         <div className="why-us">
           <div className="container">
             <div className="row d-flex align-items-center">
-              <div className="col-md-6">
-                <div className="title">
-                  <h3>
-                    <FaUser className="title-icon me-1" />
-                    Why Homerun Offer <span> Makes Sense for You</span>
-                  </h3>
-                </div>
+              <div className="title">
+                <h3>
+                  <FaUser className="title-icon me-1" />
+                  Why Front Door Buys <span>Makes Sense for You</span>
+                </h3>
+              </div>
+              <div className="col-md-6 order-2 order-md-1">
                 <div className="stramline">
                   <span>Streamlined Selling Process:</span> Imagine bypassing
                   months of uncertainty and the headache of potential buyers
@@ -236,9 +287,10 @@ const Home = () => {
                   estate.
                 </div>
               </div>
-              <div className="col-md-6 d-flex justify-content-center">
+
+              <div className="col-md-6 d-flex justify-content-center order-1 order-md-2">
                 <div className="img-area">
-                  <img src={compactLogo} alt="" />
+                  <img src={compactLogo} alt="Logo" />
                 </div>
               </div>
             </div>
@@ -254,7 +306,7 @@ const Home = () => {
                   How <span> It Works</span>
                 </h3>
               </div>
-              <div style={{margin : "0"}} className="row">
+              <div style={{ margin: "0" }} className="row">
                 <div className="setps col-md-4">
                   <div className="step-item">
                     <div className="image-area">
@@ -362,10 +414,10 @@ const Home = () => {
                     <RiStarSFill className="star" />
                   </div>
                   <div className="comment">
-                    I would recommend Homerun Offer to anybody who wants to sell
-                    their home without headaches and open houses. Not to mention
-                    that the office people were so easy to get along with and
-                    accommodating. Five stars from me.
+                    I would recommend Front Door Buys to anybody who wants to
+                    sell their home without headaches and open houses. Not to
+                    mention that the office people were so easy to get along
+                    with and accommodating. Five stars from me.
                   </div>
 
                   <div className="reviewer">- Carol O.</div>
@@ -401,8 +453,9 @@ const Home = () => {
                     <RiStarSFill className="star" />
                   </div>
                   <div className="comment">
-                    Homerun Offer has a wonderful team that is very professional
-                    and efficient. Great experience and highly recommend
+                    Front Door Buys has a wonderful team that is very
+                    professional and efficient. Great experience and highly
+                    recommend
                   </div>
 
                   <div className="reviewer">- Konstansa G.</div>

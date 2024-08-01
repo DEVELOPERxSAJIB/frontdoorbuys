@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import footerLogo from "../assets/images/logo.webp";
+import footerLogo from "../assets/images/newLogo.webp";
 import "./stylesheet.scss";
 
 const Footer = () => {
