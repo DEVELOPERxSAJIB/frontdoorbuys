@@ -434,7 +434,7 @@ const Home = () => {
                   </div>
                   <div className="comment">
                     At this hard moment in my life where another cash company
-                    failed to guide me through the process homerun opened my
+                    failed to guide me through the process front door buys opened my
                     eyes to how it all works. Thank you for all of your help.
                   </div>
 
