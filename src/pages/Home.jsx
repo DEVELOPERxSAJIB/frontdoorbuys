@@ -95,13 +95,13 @@ const Home = () => {
 
               <div className="col-md-6 col-sm-12">
                 <div className="form-area shadow-sm">
-                  <div className="title">
+                  {/* <div className="title">
                     Need to <span>Sell YOUR House?</span>
                   </div>
                   <div className="sub-title">
                     <span>No</span> Realtors, <span>No</span> Fees,{" "}
                     <span>No</span> Repairs
-                  </div>
+                  </div> */}
                   <div className="form-home">
                     <form
                       ref={form}
