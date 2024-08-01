@@ -452,10 +452,22 @@
     color: #fff;
     padding: 50px 0;
 
+    .image-area {
+      height: 90px;
+      width: 180px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 7px;
+      }
+    }
+
     h2 {
       font-size: 40px;
       line-height: 52px;
       font-weight: 700;
+      margin-top: 30px;
     }
 
     p {
@@ -600,6 +612,57 @@
         border: none;
         padding: 15px 40px;
         text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.contact-main {
+  .contact-hero {
+    background-color: #0095c9;
+    color: #fff;
+    padding: 50px 0;
+
+    .image-area {
+      height: 90px;
+      width: 180px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: 7px;
+      }
+    }
+
+    h2 {
+      font-size: 50px;
+      line-height: 65px;
+      font-weight: 700;
+      margin-top: 20px;
+    }
+  }
+
+  .form-area {
+    label {
+      font-size: 14px;
+      line-height: 25px;
+      color: rgb(44, 51, 69);
+      font-weight: 500;
+      font-family: "Inter", sans-serif;
+    }
+    
+    input, textarea {
+      font-weight: 500;
+      font-size: 12px;
+      color: rgb(44, 51, 69);
+      line-height: 18px;
+      font-family: "Inter", sans-serif;
+      box-shadow: none;
+      padding: 8px 15px;
+
+      &:focus {
+        outline : none;
+        border: 1px solid rgba(44, 51, 69, 0.351);
       }
     }
   }

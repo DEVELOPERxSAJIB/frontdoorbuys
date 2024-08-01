@@ -5,6 +5,7 @@ import { RiStarSFill } from "react-icons/ri";
 import reviewerOne from "../assets/images/reviewer-1.webp";
 import reviewerTwo from "../assets/images/reviewer-2.webp";
 import { Link } from "react-router-dom";
+import logo from "../assets/images/newLogo.webp";
 
 const About = () => {
   return (
@@ -13,9 +14,11 @@ const About = () => {
         <div className="about-hero">
           <div className="container">
             <div className="row d-flex text-center justify-content-center">
-              {/* <div className="image-area">
-                <img src={logo} alt="" />
-              </div> */}
+              <div className="d-flex justify-content-center">
+                <div className="image-area">
+                  <img src={logo} alt="" />
+                </div>
+              </div>
               <h2>About Homerun Offer</h2>
               <p>
                 We have helped hundreds of homeowners buy and sell properties.
