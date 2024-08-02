@@ -38,7 +38,13 @@ const Header = () => {
 
             <div className="">
               <div className="phone">
-                <a style={{textDecoration : "none", color : "#000"}} href="tel:2533250833">253-3250-833</a></div>
+                <a
+                  style={{ textDecoration: "none", color: "#000" }}
+                  href="tel:2533250833"
+                >
+                  253-325-0833
+                </a>
+              </div>
             </div>
 
             <div className="responsive-menu">
@@ -46,13 +52,13 @@ const Header = () => {
                 className="phone-menu-btn overlay"
                 onClick={() => setOpen((prev) => !prev)}
               >
-                {open ? <ImCross  /> : <TfiMenu />}
+                {open ? <ImCross /> : <TfiMenu />}
               </button>
               {open && (
                 <>
                   <div className="phone-menu">
                     <div className="cross-btn">
-                    <ImCross 
+                      <ImCross
                         size={15}
                         color="#000"
                         onClick={() => setOpen(false)}
@@ -74,8 +80,8 @@ const Header = () => {
                         className="d-flex align-items-center gap-1"
                       >
                         <MdCall size={20} color="#111" />
-                        <Link style={{ fontWeight: "500" }} to="tel:8449554354">
-                          8449554354
+                        <Link style={{ fontWeight: "500" }} to="tel:2533250833">
+                          253-325-0833
                         </Link>
                       </li>
                     </ul>
