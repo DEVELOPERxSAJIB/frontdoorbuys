@@ -80,10 +80,10 @@ const About = () => {
                       <RiStarSFill className="star" />
                     </div>
                     <div className="comment">
-                      Absolutely the best!! Ryan and his team have extensive
+                      Absolutely the best!! Vadim Babets and his team have extensive
                       experience in real estate ownership and transactions.
                       Knowledgeable and honest communication. Easy transactions.
-                      I have worked with Ryan for years and I wouldn’t trust
+                      I have worked with Vadim Babets for years and I wouldn’t trust
                       anyone else with my business.
                     </div>
                     <div className="d-flex justify-content-center mt-4">
@@ -109,7 +109,7 @@ const About = () => {
                     </div>
                     <div className="comment">
                       Front Door Buys is the best in Las Vegas. They do what they
-                      say they will do. Ryan is experienced and professional. He
+                      say they will do. Vadim Babets is experienced and professional. He
                       is all truth. If you are looking to sell your home quickly
                       with full transparency give Front Door Buys a chance.
                     </div>

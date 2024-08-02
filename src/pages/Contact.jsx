@@ -212,7 +212,7 @@ const Contact = () => {
                                 name="consentGiven"
                                 value={
                                   isChecked
-                                    ? "I want to receive emails"
+                                    ? "I want to receive marketing emails"
                                     : "Don't send marketing email"
                                 }
                                 className="me-2"

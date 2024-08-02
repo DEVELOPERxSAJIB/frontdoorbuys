@@ -5,7 +5,6 @@ import { FaUser } from "react-icons/fa";
 import forSale from "../assets/images/forsale.webp";
 import compactLogo from "../assets/images/newLogo.webp";
 import compareImage from "../assets/images/frontdoorbannner.webp";
-import ownerImage from "../assets/images/owner-section.jpeg";
 import { IoSettingsSharp } from "react-icons/io5";
 import { FaCheckCircle } from "react-icons/fa";
 import { RiStarSFill } from "react-icons/ri";
@@ -56,8 +55,8 @@ const Home = () => {
   const sendEmail = () => {
     setLoading(true);
     emailjs
-      .sendForm("service_9bmkzoo", "template_zm4w45p", form.current, {
-        publicKey: "GAQ_Vq4tSYF9xubIj",
+      .sendForm("service_a1tii3f", "template_wqjkwoi", form.current, {
+        publicKey: "B4xB5TqGU8MkF9fSh",
       })
       .then(
         () => {
@@ -70,7 +69,7 @@ const Home = () => {
         }
       )
       .finally(() => {
-        setLoading(false); // Hide loading message
+        setLoading(false);
       });
   };
 
@@ -95,10 +94,10 @@ const Home = () => {
 
               <div className="col-md-6 col-sm-12">
                 <div className="form-area shadow-sm">
-                  {/* <div className="title">
-                    Need to <span>Sell YOUR House?</span>
+                  <div className="title">
+                    enter your <span>info </span>below
                   </div>
-                  <div className="sub-title">
+                  {/* <div className="sub-title">
                     <span>No</span> Realtors, <span>No</span> Fees,{" "}
                     <span>No</span> Repairs
                   </div> */}
@@ -364,7 +363,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="owner-info">
+        {/* <div className="owner-info">
           <div className="container">
             <div className="row">
               <div className="col-md-5 col-sm-12 d-flex align-items-center justify-content-center">
@@ -374,19 +373,19 @@ const Home = () => {
               </div>
               <div className="col-md-7 col-sm-12">
                 <div className="title text-center">
-                  RYAN <span className="ms-2">PINEDA</span>
+                  Vadim<span className="ms-2">babets</span>
                 </div>
                 <div className="description">
                   <p>
-                    Ryan Pineda has been in the real estate industry since 2010
+                    Vadim Babets has been in the real estate industry since 2010
                     and has invested in over $100,000,000 of real estate. He has
                     amassed over 2 million followers on social media and has
                     generated over 1 billion views online.
                   </p>
 
                   <p>
-                    Ryan lives in Las Vegas, NV with his wife Mindy and three
-                    children James, Olivia, and Judah. Before his business
+                    Vadim Babets lives in Las Vegas, NV with his wife Mindy and
+                    three children James, Olivia, and Judah. Before his business
                     success he was a professional baseball player with the
                     Oaklands A’s. His desire is to share his story, inspire
                     others, and teach others how to live the Wealthy Way.
@@ -395,7 +394,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="testimonial">
           <div className="container">
@@ -434,8 +433,9 @@ const Home = () => {
                   </div>
                   <div className="comment">
                     At this hard moment in my life where another cash company
-                    failed to guide me through the process front door buys opened my
-                    eyes to how it all works. Thank you for all of your help.
+                    failed to guide me through the process front door buys
+                    opened my eyes to how it all works. Thank you for all of
+                    your help.
                   </div>
 
                   <div className="reviewer">- Carmen P.</div>

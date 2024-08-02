@@ -1112,6 +1112,19 @@
 }
 
 @media (max-width: 576px) {
+  .home-main {
+    .compare {
+      padding: 50px 0;
+
+      .title {
+        h3 {
+          font-size: 28px !important;
+          line-height: 36px !important;
+        }
+      }
+    }
+  }
+
   .about-main {
     .about-hero {
       padding: 30px 0px !important;
