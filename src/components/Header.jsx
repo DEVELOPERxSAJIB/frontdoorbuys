@@ -38,7 +38,7 @@ const Header = () => {
 
             <div className="">
               <div className="phone">
-                <a style={{textDecoration : "none", color : "#000"}} href="tel:8449554354">844-955-4354</a></div>
+                <a style={{textDecoration : "none", color : "#000"}} href="tel:2533250833">253-3250-833</a></div>
             </div>
 
             <div className="responsive-menu">
