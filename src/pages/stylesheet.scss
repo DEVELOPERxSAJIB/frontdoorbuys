@@ -643,6 +643,12 @@
   }
 
   .form-area {
+    .success-title {
+      h3 {
+        font-weight: 500;
+      }
+    }
+
     label {
       font-size: 14px;
       line-height: 25px;
