@@ -203,7 +203,7 @@ const Home = () => {
                       <div className="text-start mt-4 px-4">
                         <span>
                           By clicking &quot;Get My FREE Offer&quot; you agree to
-                          FrontDoorBuy and its affikiates Terms of Service and
+                          FrontDoorBuys and its affikiates Terms of Service and
                           Privacy Policy.
                         </span>
                       </div>
