@@ -93,10 +93,10 @@ const Home = () => {
               </div>
 
               <div className="col-md-6 col-sm-12">
+                <div className="form-title">
+                  JUST ENTER <span>YOUR INFO BELOW</span>
+                </div>
                 <div className="form-area shadow-sm">
-                  <div className="title">
-                    enter your <span>info </span>below
-                  </div>
                   {/* <div className="sub-title">
                     <span>No</span> Realtors, <span>No</span> Fees,{" "}
                     <span>No</span> Repairs
@@ -377,14 +377,14 @@ const Home = () => {
                 </div>
                 <div className="description">
                   <p>
-                    Vadim Babets has been in the real estate industry since 2010
+                    Front Door Buys has been in the real estate industry since 2010
                     and has invested in over $100,000,000 of real estate. He has
                     amassed over 2 million followers on social media and has
                     generated over 1 billion views online.
                   </p>
 
                   <p>
-                    Vadim Babets lives in Las Vegas, NV with his wife Mindy and
+                    Front Door Buys lives in Las Vegas, NV with his wife Mindy and
                     three children James, Olivia, and Judah. Before his business
                     success he was a professional baseball player with the
                     Oaklands A’s. His desire is to share his story, inspire
