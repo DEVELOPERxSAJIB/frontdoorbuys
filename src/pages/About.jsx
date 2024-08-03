@@ -18,7 +18,7 @@ const About = () => {
                   <img src={logo} alt="" />
                 </div>
               </div>
-              <h2>About Front Door Buys</h2>
+              <h2>About Proposed Offer</h2>
               <p>
                 We have helped hundreds of homeowners buy and sell properties.
                 Our goal is to provide a quick and no hassle solution to selling
@@ -44,7 +44,7 @@ const About = () => {
                 </div>
               </div>
               <div className="col-md-6">
-                <h2>The Front Door Buys Difference</h2>
+                <h2>The Proposed Offer Difference</h2>
                 <ul>
                   <li>We&#39;ll buy your home as-is.</li>
                   <li>You won&#39;t have to list it or show it.</li>
@@ -80,10 +80,10 @@ const About = () => {
                       <RiStarSFill className="star" />
                     </div>
                     <div className="comment">
-                      Absolutely the best!! Front Door Buys and his team have extensive
+                      Absolutely the best!! Proposed Offer and his team have extensive
                       experience in real estate ownership and transactions.
                       Knowledgeable and honest communication. Easy transactions.
-                      I have worked with Front Door Buys for years and I wouldn’t trust
+                      I have worked with Proposed Offer for years and I wouldn’t trust
                       anyone else with my business.
                     </div>
                     <div className="d-flex justify-content-center mt-4">
@@ -108,10 +108,10 @@ const About = () => {
                       <RiStarSFill className="star" />
                     </div>
                     <div className="comment">
-                      Front Door Buys is the best in Las Vegas. They do what they
-                      say they will do. Front Door Buys is experienced and professional. He
+                      Proposed Offer is the best in Las Vegas. They do what they
+                      say they will do. Proposed Offer is experienced and professional. He
                       is all truth. If you are looking to sell your home quickly
-                      with full transparency give Front Door Buys a chance.
+                      with full transparency give Proposed Offer a chance.
                     </div>
                     <div className="d-flex justify-content-center mt-4">
                       <div className="image-area">

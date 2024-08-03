@@ -203,7 +203,7 @@ const Home = () => {
                       <div className="text-start mt-4 px-4">
                         <span>
                           By clicking &quot;Get My FREE Offer&quot; you agree to
-                          FrontDoorBuys and its affikiates Terms of Service and
+                          ProposedOffer and its affikiates Terms of Service and
                           Privacy Policy.
                         </span>
                       </div>
@@ -239,7 +239,7 @@ const Home = () => {
                 </p>
 
                 <p className="mb-3">
-                  That’s where Front Door Buys steps in. We specialize in quick,
+                  That’s where Proposed Offer steps in. We specialize in quick,
                   cash offers for homes just like yours. Forget the stress of
                   fixing up your home, dealing with showings or paying
                   commission; we buy your home as-is, so you can move on faster
@@ -262,7 +262,7 @@ const Home = () => {
               <div className="title">
                 <h3>
                   <FaUser className="title-icon me-1" />
-                  Why Front Door Buys <span>Makes Sense for You</span>
+                  Why Proposed Offer <span>Makes Sense for You</span>
                 </h3>
               </div>
               <div className="col-md-6 order-2 order-md-1">
@@ -349,9 +349,9 @@ const Home = () => {
 
         <div className="compare">
           <div className="container">
-            <div className="row d-flex flex-col justify-content-center">
+            <div className="row d-flex align-items-center flex-col justify-content-center">
               <div className="title">
-                <h3>
+                <h3 className="d-flex align-items-center">
                   <FaCheckCircle className="title-icon me-1" />
                   HOW WE <span>COMPARE</span>
                 </h3>
@@ -377,14 +377,14 @@ const Home = () => {
                 </div>
                 <div className="description">
                   <p>
-                    Front Door Buys has been in the real estate industry since 2010
+                    Proposed Offer has been in the real estate industry since 2010
                     and has invested in over $100,000,000 of real estate. He has
                     amassed over 2 million followers on social media and has
                     generated over 1 billion views online.
                   </p>
 
                   <p>
-                    Front Door Buys lives in Las Vegas, NV with his wife Mindy and
+                    Proposed Offer lives in Las Vegas, NV with his wife Mindy and
                     three children James, Olivia, and Judah. Before his business
                     success he was a professional baseball player with the
                     Oaklands A’s. His desire is to share his story, inspire
@@ -413,7 +413,7 @@ const Home = () => {
                     <RiStarSFill className="star" />
                   </div>
                   <div className="comment">
-                    I would recommend Front Door Buys to anybody who wants to
+                    I would recommend Proposed Offer to anybody who wants to
                     sell their home without headaches and open houses. Not to
                     mention that the office people were so easy to get along
                     with and accommodating. Five stars from me.
@@ -433,7 +433,7 @@ const Home = () => {
                   </div>
                   <div className="comment">
                     At this hard moment in my life where another cash company
-                    failed to guide me through the process front door buys
+                    failed to guide me through the process Proposed Offer
                     opened my eyes to how it all works. Thank you for all of
                     your help.
                   </div>
@@ -453,7 +453,7 @@ const Home = () => {
                     <RiStarSFill className="star" />
                   </div>
                   <div className="comment">
-                    Front Door Buys has a wonderful team that is very
+                    Proposed Offer has a wonderful team that is very
                     professional and efficient. Great experience and highly
                     recommend
                   </div>

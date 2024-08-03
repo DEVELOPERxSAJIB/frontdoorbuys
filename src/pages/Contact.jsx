@@ -212,7 +212,7 @@ const Contact = () => {
                                 <span className="check-box-text">
                                   By submitting the contact form and signing up
                                   for texts, you consent to receive marketing
-                                  text messages from Front Door Buys LLC at the
+                                  text messages from Proposed Offer LLC at the
                                   number provided. Consent is not a condition of
                                   purchase. Message and data rates may apply.
                                   You can unsubscribe at any time by replying
