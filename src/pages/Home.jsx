@@ -349,7 +349,7 @@ const Home = () => {
 
         <div className="compare">
           <div className="container">
-            <div className="row d-flex align-items-center flex-col justify-content-center">
+            <div className="row d-flex flex-col justify-content-center">
               <div className="title">
                 <h3 className="d-flex align-items-center">
                   <FaCheckCircle className="title-icon me-1" />
