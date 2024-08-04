@@ -10,7 +10,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { RiStarSFill } from "react-icons/ri";
 import { FaUserFriends } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import emailjs from "@emailjs/browser";
 import * as yup from "yup";
@@ -18,6 +18,7 @@ import home from "../assets/images/home.webp";
 import money from "../assets/images/money.webp";
 import calendar from "../assets/images/calendar.webp";
 import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
 
 const schema = yup.object().shape({
   address: yup.string().required("Property Address is required"),
@@ -38,6 +39,12 @@ const Home = () => {
   const scrollToHeroSection = () => {
     heroSectionRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const {
     register,
