@@ -208,7 +208,7 @@
       height: auto;
       width: 80%;
       object-fit: cover;
-      
+
       img {
         width: 100%;
         height: 100%;
@@ -1138,6 +1138,15 @@
         h3 {
           font-size: 28px !important;
           line-height: 36px !important;
+        }
+      }
+    }
+
+    .why-us {
+      .title {
+        h3 {
+          font-size: 28px !important;
+          line-height: 38px !important;
         }
       }
     }

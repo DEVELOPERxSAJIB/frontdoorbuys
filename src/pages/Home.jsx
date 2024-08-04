@@ -353,7 +353,7 @@ const Home = () => {
               <div className="title">
                 <h3 className="d-flex align-items-center">
                   <FaCheckCircle className="title-icon me-1" />
-                  HOW WE <span>COMPARE</span>
+                  HOW WE {" "}<span>COMPARE</span>
                 </h3>
               </div>
               <div className="image-area">
