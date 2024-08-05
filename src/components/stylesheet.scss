@@ -205,13 +205,17 @@
 
 @media (max-width: 576px) {
 
+  .header-main {
+    padding: 12px 0 !important;
+  }
+
   .navlogo-wrapper {
     width: 80% !important;
   }
 
   .nav-logo {
-    height: 55px !important;
-    width: 140px !important;
+    height: 50px !important;
+    width: 130px !important;
 
     img {
       object-fit: cover;
@@ -234,8 +238,8 @@
 
   .footer-content {
     .image-area {
-      height: 90px !important;
-      width: 170px !important;
+      height: 70px !important;
+      width: 150px !important;
       img {
         height: 100%;
         width: 100%;
@@ -243,7 +247,7 @@
     }
 
     h3 {
-      font-size: 13px !important;
+      font-size: 16px !important;
     }
   }
 }
